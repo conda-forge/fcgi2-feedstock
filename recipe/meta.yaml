@@ -13,7 +13,7 @@ source:
     - patches/0002-get-2.4.2-compiling-on-windows.patch
 
 build:
-  number: 0
+  number: 1
 
 
 requirements:
@@ -24,6 +24,7 @@ requirements:
     - libtool  # [unix]
     - automake  # [unix]
     - make  # [unix]
+    - gnuconfig   # [unix]
 
 test:
   commands:
