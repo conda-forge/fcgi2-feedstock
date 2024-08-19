@@ -9,11 +9,11 @@ source:
   url: https://github.com/FastCGI-Archives/fcgi2/archive/refs/tags/{{ version }}.tar.gz
   sha256: 1fe83501edfc3a7ec96bb1e69db3fd5ea1730135bd73ab152186fd0b437013bc
   patches:
-    - patches/0001-support-x64-and-uwp-build.patch
-    - patches/0002-get-2.4.2-compiling-on-windows.patch
+    - patches/0001-support-x64-and-uwp-build.patch  # [not unix]
+    - patches/0002-get-2.4.2-compiling-on-windows.patch  # [not unix]
 
 build:
-  number: 0
+  number: 1
 
 
 requirements:
@@ -24,6 +24,7 @@ requirements:
     - libtool  # [unix]
     - automake  # [unix]
     - make  # [unix]
+    - gnuconfig   # [unix]
 
 test:
   commands:
