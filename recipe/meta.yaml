@@ -1,5 +1,5 @@
 {% set name = "fcgi2" %}
-{% set version = "2.4.2" %}
+{% set version = "2.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/FastCGI-Archives/fcgi2/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 1fe83501edfc3a7ec96bb1e69db3fd5ea1730135bd73ab152186fd0b437013bc
+  sha256: 5273bc54c28215d81b9bd78f937a9bcdd4fe94e41ccd8d7c991aa8a01b50b70e
   patches:
     - patches/0001-support-x64-and-uwp-build.patch
     - patches/0002-get-2.4.2-compiling-on-windows.patch
 
 build:
-  number: 3
+  number: 0
 
 
 requirements:
