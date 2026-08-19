@@ -1,12 +1,13 @@
 nmake /f Makefile.nt
 if errorlevel 1 exit 1
 
-copy cgi-fcgi\Release\cgi-fcgi.exe %PREFIX%\Library\bin
+copy cgi-fcgi\Release\cgi-fcgi.exe %LIBRARY_BIN%
 if errorlevel 1 exit 1
-copy libfcgi\Release\libfcgi.dll %PREFIX%\Library\bin
+copy libfcgi\Release\libfcgi.dll %LIBRARY_BIN%
 if errorlevel 1 exit 1
-copy libfcgi\Release\libfcgi.lib %PREFIX%\Library\lib
+mkdir %LIBRARY_LIB%
+copy libfcgi\Release\libfcgi.lib %LIBRARY_LIB%
 if errorlevel 1 exit 1
 
-(robocopy include %PREFIX%\include "*.h") ^& IF %ERRORLEVEL% LEQ 1 exit 0
+(robocopy include %LIBRARY_INC% "*.h") ^& IF %ERRORLEVEL% LEQ 1 exit 0
 
